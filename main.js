@@ -14,12 +14,17 @@ function init() {
             
             allRecipes.forEach((ele) => {
                 htmlContent += `
-                <div class="card">
-                    <img src="${ele.image}" style="width:100%">
+                    <div class="card">
+                    <img src="${ele.image}"">
+                    <div class"contant-card">
                     <h3>${ele.name}</h3>
-                    <p>المطبخ: ${ele.cuisine}</p>
-                    <p>التقييم: ${ele.rating} ⭐</p>
-                </div>`;
+                    <p>Kitchen: ${ele.cuisine}</p>
+                    <p>Evaluation: ${ele.ingredients}</p>
+                    <a href="#">${"See Recipe"}</a>
+                    </div>
+                    
+                </div> 
+                `;
             });
             
             productsContainer.innerHTML = htmlContent;
