@@ -6,9 +6,39 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-    <input type="text" id="searchInput" placeholder="Or search your favourite recipe... Margherita">
+<header class="header">
+  <div class="container-header">
+    <a href="#" class="logo">Foody</a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+</div>
 </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="hero-text">
+        Discover our diverse collection of recipes, each with its own unique flavors and ingredients.
+      </p>
+      
+      <form class="search-form" role="search">
+        <input 
+          type="search" 
+          class="search-input" 
+          placeholder="Or search your favourite recipe.."
+          aria-label="Search recipes"
+        >
+      </form>
+    </div>
+  </section>
+
+   
+
 <h2 >Recipes:</h2>
 <div id="container"></div>
 

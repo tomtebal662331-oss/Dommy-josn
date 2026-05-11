@@ -35,3 +35,41 @@ function init() {
 }
 
 init();
+
+const searchForm = document.querySelector('.search-form');
+const searchInput = document.querySelector('.search-input');
+const container = document.getElementById('container');
+
+searchForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const query = searchInput.value.trim();
+  if (query === '') {
+    return;
+  }
+  searchInput.value = '';
+  searchRecipes(query);
+});
+
+function searchRecipes(query) {
+  container.innerHTML = '<p>Loading...</p>';
+  fetch(`https://dummyjson.com/recipes/search?q=Margherita(query)}`)
+    .then(function(response) {
+      return response.json();
+    })
+}
+
+function displayRecipes(recipes) {
+  const cardsHTML = recipes.map(function(recipe) {
+    return `
+      <div class="recipe-card">
+        <img src="${recipe.image}" alt="${recipe.name}">
+        <h3>${recipe.name}</h3>
+        <p>Cuisine: ${recipe.cuisine}</p>
+        <p>Difficulty: ${recipe.difficulty}</p>
+      </div>
+    `;
+  }).join('');
+  container.innerHTML = cardsHTML;
+}
+
+

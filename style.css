@@ -3,20 +3,102 @@
     padding: 0; 
     box-sizing: border-box; 
     text-decoration: none; 
+    list-style: none;
+}
+:root {
+  --black: #000;
+  --white: #fff;
+  --border-color: #c8a97e; 
+  --font-main: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 body { 
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden; 
+    font-family: var(--font-main);
+    line-height: 1.6;
 }
 
 header { 
     text-align: center; 
     padding: 20px; 
-    background: #eee; 
     width: 100%;
+    background: var(--black);
+    color: var(--white);
 }
+.header .container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-list a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+.nav-list a:hover {
+  opacity: 0.7;
+}
+
+.hero {
+  padding-block: 3rem 4rem;
+  text-align: center;
+}
+
+.hero-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  
+}
+
+.search-form {
+  max-width: 650px;
+  margin-inline: auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font: inherit;
+  font-size: 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-input:focus {
+  border-color: #a8845c;
+  box-shadow: 0 0 0 3px rgb(200 169 126 / 0.2);
+}
+
+.container {
+  width: min(90%, 1100px);
+  margin-inline: auto;
+}
+
 
 #container { 
     width: 95%; 
@@ -59,6 +141,28 @@ header {
     text-align: left;
 }
 
+.card h3 { 
+    padding: 5px;
+     font-size: 1.2rem;
+     }
+.card p { 
+    margin: 0.5rem 0; 
+    color: #444;
+ }
+h2 {
+     font-size: 1.5rem;
+      color: chocolate;
+       margin: 20px 0 0 40px;
+    }
+a {
+     font-size: 1rem;
+      color: chocolate; 
+      font-weight: bold; 
+    }
+a:hover {
+     color: rgb(95, 57, 30);
+     }
+
 @media (max-width: 560px) {
     #searchInput {
         width: 100%; 
@@ -83,8 +187,52 @@ header {
    
 }
 
-.card h3 { padding: 5px; font-size: 1.2rem; }
-.card p { margin: 0.5rem 0; color: #444; }
-h2 { font-size: 1.5rem; color: chocolate; margin: 20px 0 0 40px;}
-a { font-size: 1rem; color: chocolate; font-weight: bold; }
-a:hover { color: rgb(95, 57, 30); }
+/* /////////////////////////////// */
+
+/* ============ Reset + Variables ============ */
+
+
+
+
+
+
+
+
+/* ============ Header ============ */
+
+
+
+
+
+
+/* ============ Responsive ============ */
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .hero {
+    padding-block: 2rem;
+  }
+  
+  .hero-text {
+    font-size: 0.95rem;
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-list {
+    gap: 1.25rem;
+  }
+}
